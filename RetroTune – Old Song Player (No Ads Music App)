@@ -1,0 +1,93 @@
+#include <stdio.h>
+#include <string.h>
+
+#define MAX_SONGS 100
+
+struct Song {
+    char title[100];
+    char artist[100];
+    int year;
+};
+
+void displaySongs(struct Song songs[], int count) {
+    printf("\n🎵 --- Old Songs Library --- 🎵\n");
+    for (int i = 0; i < count; i++) {
+        printf("%d. %s - %s (%d)\n", i + 1, songs[i].title, songs[i].artist, songs[i].year);
+    }
+}
+
+void playSong(struct Song s) {
+    printf("\n▶️ Now Playing: %s by %s (%d)\n", s.title, s.artist, s.year);
+    printf("Enjoy the music... No ads, just vibes! 💿\n");
+}
+
+int addSong(struct Song songs[], int count) {
+    if (count >= MAX_SONGS) {
+        printf("\n❌ Library is full! Cannot add more songs.\n");
+        return count;
+    }
+
+    struct Song newSong;
+    printf("\nEnter song title: ");
+    getchar();
+    fgets(newSong.title, sizeof(newSong.title), stdin);
+    newSong.title[strcspn(newSong.title, "\n")] = '\0';
+
+    printf("Enter artist name: ");
+    fgets(newSong.artist, sizeof(newSong.artist), stdin);
+    newSong.artist[strcspn(newSong.artist, "\n")] = '\0';
+
+    printf("Enter release year: ");
+    scanf("%d", &newSong.year);
+
+    songs[count] = newSong;
+    printf("\n✅ Song added successfully: %s - %s (%d)\n", newSong.title, newSong.artist, newSong.year);
+    return count + 1;
+}
+
+int main() {
+    struct Song songs[MAX_SONGS] = {
+        {"Lag Ja Gale", "Lata Mangeshkar", 1964},
+        {"Yeh Shaam Mastani", "Kishore Kumar", 1971},
+        {"Hotel California", "Eagles", 1976},
+        {"Imagine", "John Lennon", 1971}
+    };
+    int count = 4;
+    int choice;
+
+    while (1) {
+        printf("\n==============================\n");
+        printf(" 🎶 RetroTune - Old Song Player 🎶\n");
+        printf("==============================\n");
+        printf("1. View All Songs\n");
+        printf("2. Play a Song\n");
+        printf("3. Add a New Song\n");
+        printf("4. Exit\n");
+        printf("Enter your choice: ");
+        scanf("%d", &choice);
+
+        switch (choice) {
+            case 1:
+                displaySongs(songs, count);
+                break;
+            case 2:
+                displaySongs(songs, count);
+                printf("\nEnter song number to play: ");
+                int songChoice;
+                scanf("%d", &songChoice);
+                if (songChoice > 0 && songChoice <= count)
+                    playSong(songs[songChoice - 1]);
+                else
+                    printf("Invalid choice!\n");
+                break;
+            case 3:
+                count = addSong(songs, count);
+                break;
+            case 4:
+                printf("\n👋 Thanks for using RetroTune! Enjoy your music.\n");
+                return 0;
+            default:
+                printf("\nInvalid choice! Try again.\n");
+        }
+    }
+}
