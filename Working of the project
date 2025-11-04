@@ -1,0 +1,104 @@
+Working of the Project
+
+The project “RetroTune – Old Song Player” works as a menu-driven C application that allows the user to interact with a collection of old songs using simple keyboard inputs.
+It is a console-based program, meaning all interactions happen through the terminal screen using text menus and user inputs.
+
+Here’s how the project works step by step 👇
+
+Step 1: Program Start
+
+When the program starts, it first loads a few predefined classic songs (like Lag Ja Gale, Yeh Shaam Mastani, Hotel California, etc.) into an array of structures.
+
+Each song is stored in a structure of type Song, which contains:
+
+struct Song {
+    char title[100];
+    char artist[100];
+    int year;
+};
+
+
+This structure stores the title, artist, and release year of each song.
+
+Step 2: Displaying the Main Menu
+
+Once the program starts, it displays a simple main menu:
+
+==============================
+ 🎶 RetroTune - Old Song Player 🎶
+==============================
+1. View All Songs
+2. Play a Song
+3. Add a New Song
+4. Exit
+
+
+The user is asked to enter a choice (1–4) to perform a specific action.
+
+Step 3: Viewing Songs
+
+If the user selects Option 1,
+the function displaySongs() is called.
+This function prints all songs currently available in the library.
+
+Example output:
+
+🎵 --- Old Songs Library --- 🎵
+1. Lag Ja Gale - Lata Mangeshkar (1964)
+2. Yeh Shaam Mastani - Kishore Kumar (1971)
+3. Hotel California - Eagles (1976)
+4. Imagine - John Lennon (1971)
+
+Step 4: Playing a Song
+
+If the user selects Option 2,
+the program first displays the song list and asks the user to enter the song number they want to play.
+Then the function playSong() is called, which simulates playing that song by displaying:
+
+▶️ Now Playing: Hotel California by Eagles (1976)
+Enjoy the music... No ads, just vibes! 💿
+
+
+(Note: Actual music playback is simulated through text output.)
+
+Step 5: Adding a New Song
+
+If the user selects Option 3,
+the function addSong() is called.
+The program asks the user to enter:
+
+Song Title
+
+Artist Name
+
+Release Year
+
+After the user enters the details, the new song is stored in the array and added to the main song list.
+
+Example:
+
+Enter song title: Tum Hi Ho
+Enter artist name: Arijit Singh
+Enter release year: 2013
+
+✅ Song added successfully: Tum Hi Ho - Arijit Singh (2013)
+
+Step 6: Exiting the Program
+
+If the user selects Option 4,
+the program ends gracefully with a goodbye message:
+
+👋 Thanks for using RetroTune! Enjoy your music.
+
+Step 7: Looping Mechanism
+
+The entire program runs inside a while loop, allowing the user to perform multiple actions repeatedly until they choose to exit.
+This makes it function like a real app menu where you can view, play, and add songs continuously.
+
+Working Summary
+Step	User Action	Function Used	Description
+1	Start program	main()	Initializes song list
+2	View songs	displaySongs()	Shows all available songs
+3	Play song	playSong()	Simulates playing selected song
+4	Add song	addSong()	Adds new song to the list
+5	Exit	return 0	Ends program
