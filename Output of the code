@@ -1,0 +1,23 @@
+Output
+==============================
+  RetroTune - Old Song Player 
+==============================
+1. View All Songs
+2. Play a Song
+3. Add a New Song
+4. Exit
+Enter your choice: 1
+
+ --- Old Songs Library ---
+1. Lag Ja Gale - Lata Mangeshkar (1964)
+2. Yeh Shaam Mastani - Kishore Kumar (1971)
+3. Hotel California - Eagles (1976)
+4. Imagine - John Lennon (1971)
+
+Enter your choice: 3
+
+Enter song title: Tum Hi Ho
+Enter artist name: Arijit Singh
+Enter release year: 2013
+
+✅ Song added successfully: Tum Hi Ho - Arijit Singh (2013)
