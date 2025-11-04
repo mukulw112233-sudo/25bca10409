@@ -1,0 +1,17 @@
+Music is an essential part of human life — it connects emotions, memories, and moments. In today’s digital world, many people enjoy listening to music using online platforms, but these often come with ads, interruptions, and internet dependency. To address this problem, the project “RetroTune – Old Song Player” has been developed as a simple C-based console application that allows users to enjoy old classic songs without any ads.
+
+The goal of this project is to simulate the functionality of a lightweight music player using the C programming language, focusing on core programming logic rather than complex multimedia interfaces. It demonstrates how a simple, text-based system can still provide interactive and enjoyable experiences.
+
+RetroTune allows users to:
+
+View a list of predefined classic songs
+
+Add their own favorite songs into the library
+
+“Play” any selected song (through on-screen simulation)
+
+Navigate the menu easily using simple input options
+
+The application uses structures to store song details such as title, artist, and release year, while arrays manage the song list. Various functions are used to perform operations like displaying songs, adding songs, and simulating playback. The project highlights the use of modular programming, data handling, and user interaction in C.
+
+In future versions, the project can be enhanced by integrating file handling to permanently save songs, or even by connecting the C logic with a mobile interface using Android NDK to make a real music app.
